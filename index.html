@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miniaturized Blowroom Prototype</title>
+  <meta name="description" content="Development of a laboratory-scale miniaturized blowroom prototype model for textile applications.">
+  
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f2f4f8;
+    }
+
+    .header {
+      min-height: 90vh;
+      width: 100%;
+      padding-top: 80px;
+      background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/depart.jpeg);
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      padding: 10px 6%;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7); /* semi-transparent black background */
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+
+    label.logo {
+  color: #fbbc05;
+  font-size: 25px;
+  line-height: 50px;
+  padding: 0 15px;
+  font-weight: bold;
+  font-family: 'Miltonian Tattoo', cursive;
+}
+
+
+    .nav-links {
+      flex: 1;
+      text-align: right;
+    }
+
+    .nav-links ul li {
+      list-style: none;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+    }
+
+    .nav-links ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      transition: color 0.3s;
+      padding: 8px 16px;
+      border-radius: 25px; 
+    }
+
+    a.active,
+    a:hover {
+      background: #fbbc05;;
+      transition: 0.5s;
+      border-radius: 25px; 
+      
+    }
+
+    .text-box {
+      width: 90%;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+    }
+
+    .text-box h1 {
+      font-size: 50px;
+    }
+
+    .fa-bars,
+    .fa-xmark {
+      display: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media(max-width: 700px) {
+      .text-box h1 {
+        font-size: 20px;
+      }
+
+      .nav-links ul li {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+        background: rgba(0, 0, 0, 0.7); /* semi-transparent black background */
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+      }
+
+      .fa-bars,
+      .fa-xmark {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="header">
+    <nav>
+      <label class="logo">Blowroom Machine</label>
+
+      
+        <div class="nav-links" id="nav-links">
+          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about us.html">ABOUT US</a></li>
+            <li class="dropdown">
+              <a href="#">MODEL DETAILS <i class="fa-solid fa-caret-down"></i></a>
+              <ul class="dropdown-content">
+                <li><a href="model.html">Bale Opener</a></li>
+                <li><a href="metaldetector.html">Metal Detector</a></li>
+                <li><a href="precleaner.html">Precleaner</a></li>
+                <li><a href="multimixer.html">Multimixer</a></li>
+                <li><a href="finecleaner.html">Fine-cleaner</a></li>
+                
+              </ul>
+            </li>
+            <li><a href="references.html">REFERENCES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+      
+
+    <div class="text-box">
+      <h1>DEVELOPMENT OF A LABORATORY SCALE <br> MINIATURIZED BLOWROOM PROTOTYPE MODEL</h1>
+      <p>Innovation for Education and Research in Textile Technology</p>
+    </div>
+  </section>
+
+  
+  
+
+  <!-- JavaScript for toggling menu -->
+  <script>
+    let navLinks = document.getElementById("nav-links");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
+
+
+
+
+<!----about us  -->
+
+    <section class="aboutus">
+      <h1>About Us</h1>
+      <p>
+          We are a dedicated group of final-year B.Tech students (Batch 2024–2025) from the Department of Textile Technology at <strong>Shri Guru Gobind Singhji Institute of Engineering and Technology, Vishnupuri, Nanded.</strong> Our project, titled <strong>"Development for a Laboratory Scale Miniaturized Blowroom Prototype Model"</strong>, is the result of our collective efforts to bridge the gap between theoretical knowledge and hands-on experience in the field of textile engineering. Recognizing the need for practical exposure in fiber preparation and processing, we undertook the challenge of designing and building a fully functional blowroom prototype that could be used at the laboratory level for educational and research purposes...
+      </p>
+      
+      <a href="about us.html" class="read-more-btn">Read More</a>
+
+
+  </section>
+
+
+    
+<!----model detail-----  -->
+
+<section class="modeldetails">
+  <h1>Model Details</h1>
+  <p>
+    The Miniaturized Blowroom Prototype is designed to demonstrate the fiber opening, cleaning, and blending processes essential in textile spinning. This model replicates industrial blowroom machinery on a laboratory scale, allowing students and researchers to observe and understand fiber processing efficiently.
+  </p>
+
+  <div class="row">
+    <div class="model-details-col">
+      <h3>Bale Opener</h3>
+      <p>
+        The Bale Opener is the first stage in the blowroom process, responsible for breaking down compressed fiber bales into smaller tufts for further processing. This machine ensures uniform fiber distribution, reducing stress on subsequent cleaning stages...
+      </p>
+    </div>
+    <div class="model-details-col">
+      <h3>Metal Detector</h3>
+      <p>
+        The Blowroom Metal Detector prevents damage to downstream machinery by detecting and removing metal contaminants from raw fibers. This system uses electromagnetic sensors that trigger an alarm when metallic objects are detected. 
+      </p>
+    </div>
+    <div class="model-details-col">
+      <h3>Pre-Cleaner</h3>
+      <p>
+        The Pre-Cleaner plays a crucial role in removing large-sized trash particles and dust from fiber tufts. The machine employs double hooks and an optimized cleaning grid to ensure effective dedusting without damaging the fiber.
+
+      </p>
+    </div>
+  </div>
+  
+  <a href="model.html" class="read-more-btn">Read More</a>
+</section>
+
+
+
+
+<!----------javascript for toggle Menu --------->
+
+<script>
+  function toggleReadMore() {
+const moreText = document.getElementById("moreText");
+const btn = document.querySelector(".read-more-btn");
+
+if (moreText.style.display === "block") {
+  moreText.style.display = "none";
+  btn.textContent = "Read More";
+} else {
+  moreText.style.display = "block";
+  btn.textContent = "Read Less";
+}
+}
+</script>
+
+<script>
+    function toggleReadMore(section) {
+        const box = document.querySelector(`.${section} .read-more-box`);
+        box.style.display = box.style.display === "none" ? "block" : "none";
+      }
+</script>
+
+
+
+<!------------project gallery--------->
+
+
+<section class="project-gallery">
+  <div class="container swiper">
+    <h1 class="gallery-title">Project Gallery</h1>
+
+    <ul class="card-list swiper-wrapper">
+      <li class="card-item swiper-slide">
+        <a href="#" class="card-link">
+          <img src="images/harp.jpeg" alt="card image" class="card-image">
+        
+        </a>
+      </li>
+      <li class="card-item swiper-slide">
+        <a href="#" class="card-link">
+          <img src="images/group.jpeg" alt="card image" class="card-image">
+        </a>
+      </li>
+      <li class="card-item swiper-slide">
+        <a href="#" class="card-link">
+          <img src="images/khude.jpeg" alt="card image" class="card-image">
+        </a>
+      </li>
+      <li class="card-item swiper-slide">
+        <a href="#" class="card-link">
+          <img src="images/grou.jpeg" alt="card image" class="card-image">
+        </a>
+      </li>
+    </ul>
+
+    <!-- Swiper navigation & pagination -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- SwiperJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Custom Script -->
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      spaceBetween: 20,
+      slidesPerView: 1,
+      centeredSlides: true,
+      grabCursor: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 1,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+      },
+    });
+  </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer Start -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <h3><i class="fas fa-cogs"></i> Miniaturized Blowroom Prototype Model</h3>
+    <p>Shri Guru Gobind Singhji Institute of Engineering and Technology, Vishnupuri, Nanded - 431606</p>
+    <p>Under the guidance of <strong>Dr. Prakash A. Khude</strong></p>
+
+    <hr>
+
+    <div class="footer-icons">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-globe"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <div class="footer-team">
+      <p><strong>Team Members:</strong></p>
+      <p>
+        Omkar Bhosale | Tejas Bachhav | Ashwini Shinde | Chaitali Turankar | Kishor Panhalkar<br>
+        Sakshi Suroshe | Dhannasingh Dakhane | Aniket Rahangdale | Gaurav Ghorband
+    </div>
+    <p><em>Website designed and developed by <strong>Ashwini Shinde</strong></em></p>
+    <p class="copyright">
+      &copy; 2025 Mini Blowroom Project | All rights reserved
+    </p>
+  </div>
+</footer>
+<!-- Footer End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

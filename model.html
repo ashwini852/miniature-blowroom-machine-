@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miniaturized Blowroom Prototype</title>
+  <meta name="description" content="Development of a laboratory-scale miniaturized blowroom prototype model for textile applications.">
+  
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f2f4f8;
+    }
+
+    .header {
+      min-height: 90vh;
+      width: 100%;
+      padding-top: 80px;
+      background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/depart.jpeg);
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      padding: 10px 6%;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7); /* semi-transparent black background */
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+
+    label.logo {
+  color: #fbbc05;
+  font-size: 25px;
+  line-height: 50px;
+  padding: 0 15px;
+  font-weight: bold;
+  font-family: 'Miltonian Tattoo', cursive;
+}
+
+
+
+    .nav-links {
+      flex: 1;
+      text-align: right;
+    }
+
+    .nav-links ul li {
+      list-style: none;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+    }
+
+    .nav-links ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      transition: color 0.3s;
+      padding: 8px 16px;
+      border-radius: 25px; 
+    }
+
+    a.active,
+    a:hover {
+      background: #fbbc05;
+      transition: 0.5s;
+      border-radius: 25px; 
+      
+    }
+
+    .text-box {
+      width: 90%;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+    }
+
+    .text-box h1 {
+      font-size: 50px;
+    }
+
+    .fa-bars,
+    .fa-xmark {
+      display: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media(max-width: 700px) {
+      .text-box h1 {
+        font-size: 20px;
+      }
+
+      .nav-links ul li {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+        background: rgba(0, 0, 0, 0.7); /* semi-transparent black background */
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+      }
+
+      .fa-bars,
+      .fa-xmark {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="header">
+    <nav>
+      <label class="logo">Blowroom Machine</label>
+
+      <div class="nav-links" id="nav-links">
+        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about us.html">ABOUT US</a></li>
+          <li class="dropdown">
+            <a href="#">MODEL DETAILS <i class="fa-solid fa-caret-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="model.html">Bale Opener</a></li>
+              <li><a href="metaldetector.html">Metal Detector</a></li>
+              <li><a href="precleaner.html">Precleaner</a></li>
+              <li><a href="multimixer.html">Multimixer</a></li>
+              <li><a href="finecleaner.html">Fine-cleaner</a></li>
+              
+            </ul>
+          </li>
+          <li><a href="references.html">REFERENCES</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        
+          
+      </div>
+      <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="text-box">
+      <h1>MODEL DETAILS </h1>
+      <p>Bale Opener machine </p>
+      
+    </div>
+  </section>
+
+  
+  
+
+  <!-- JavaScript for toggling menu -->
+  <script>
+    let navLinks = document.getElementById("nav-links");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
+
+
+
+
+
+
+<!-- bale opener -->
+
+
+<div class="section-wrapper">
+<section class="bale-opener px-6 py-10 bg-white text-gray-800">
+    <h1 class="text-3xl font-bold mb-6 border-b pb-2">Bale Opener Machine </h1>
+    
+    <p class="mb-4">
+      The bale opener prototype is designed to mechanically pluck compressed cotton bales into smaller tufts and transport them using an air-based suction system. This scaled-down model simulates real-world industrial operations using electromechanical components.
+    </p>
+  
+    <h2 class="text-xl font-semibold mt-8 mb-2">1️⃣ Mechanical Framework</h2>
+    <ul class="list-disc list-inside mb-4">
+      <li>Rigid iron frame (5mm) for structural support.</li>
+      <li>Encased with 3mm foam sheet for safety and insulation.</li>
+      <li>Mounted sliders enable smooth X (horizontal) and Y (vertical) guided movement.</li>
+      <li>Nylon ropes ensure mechanical stability and controlled motion.</li>
+    </ul>
+  
+    <h2 class="text-xl font-semibold mt-8 mb-2">2️⃣ Opening (Plucking) Mechanism</h2>
+    <ul class="list-disc list-inside mb-4">
+      <li>Uses a plucking roller (0.5" PVC pipe with metal spikes).</li>
+      <li>Driven by a BLDC motor (~10 RPM) for gentle yet effective plucking.</li>
+      <li>Spikes loosen fibers from the bale and convert them into tufts.</li>
+    </ul>
+  
+    <h2 class="text-xl font-semibold mt-8 mb-2">⚙️ Plucking Process</h2>
+    <ol class="list-decimal list-inside mb-4">
+      <li>Activate the roller switch.</li>
+      <li>Roller rotates and spikes engage cotton surface.</li>
+      <li>Compressed cotton is fluffed into smaller tufts.</li>
+    </ol>
+  
+    <h2 class="text-xl font-semibold mt-8 mb-2">3️⃣ Horizontal Movement (X-Axis)</h2>
+    <ul class="list-disc list-inside mb-4">
+      <li>Slider system allows lateral movement.</li>
+      <li>Controlled by a BLDC motor (10–15 RPM) and 2-way switch.</li>
+      <li>Simulates automatic sweeping across bale width.</li>
+    </ul>
+  
+    <h2 class="text-xl font-semibold mt-8 mb-2">4️⃣ Vertical Movement (Y-Axis)</h2>
+    <ul class="list-disc list-inside mb-4">
+      <li>BLDC motor controls up-down motion (10–15 RPM).</li>
+      <li>2-way switch adjusts roller height to access deeper layers.</li>
+    </ul>
+  
+    <h2 class="text-xl font-semibold mt-8 mb-2">5️⃣ Suction & Tuft Transfer</h2>
+    <ul class="list-disc list-inside mb-4">
+      <li>High-speed blower (13,000 RPM) creates suction to transfer tufts.</li>
+      <li>Activated via dedicated switch for easy control.</li>
+    </ul>
+  
+    <h2 class="text-xl font-semibold mt-8 mb-2">🧠 Control System Summary</h2>
+    <table class="table-auto border border-gray-300 text-left mb-6 w-full">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="p-2 border">Component</th>
+          <th class="p-2 border">Motor Type</th>
+          <th class="p-2 border">RPM</th>
+          <th class="p-2 border">Control Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-2 border">Plucking Roller</td>
+          <td class="p-2 border">BLDC</td>
+          <td class="p-2 border">10 RPM</td>
+          <td class="p-2 border">Single Switch</td>
+        </tr>
+        <tr>
+          <td class="p-2 border">Horizontal Motion (X)</td>
+          <td class="p-2 border">BLDC</td>
+          <td class="p-2 border">10–15 RPM</td>
+          <td class="p-2 border">2-way Switch</td>
+        </tr>
+        <tr>
+          <td class="p-2 border">Vertical Motion (Y)</td>
+          <td class="p-2 border">BLDC</td>
+          <td class="p-2 border">10–15 RPM</td>
+          <td class="p-2 border">2-way Switch</td>
+        </tr>
+        <tr>
+          <td class="p-2 border">Suction Blower</td>
+          <td class="p-2 border">AC/DC Motor</td>
+          <td class="p-2 border">13,000 RPM</td>
+          <td class="p-2 border">Single Switch</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <h2 class="text-xl font-semibold mt-8 mb-2">🔁 Complete Working Sequence</h2>
+    <ol class="list-decimal list-inside mb-4">
+      <li>Switch ON roller → Begin plucking.</li>
+      <li>Activate horizontal motion → Roller moves left to right.</li>
+      <li>Adjust vertical motion to reach deeper layers.</li>
+      <li>Switch ON blower → Tufts are suctioned to the next unit.</li>
+    </ol>
+  
+    <h2 class="text-xl font-semibold mt-8 mb-2">✅ Advantages & Real-World Simulation</h2>
+    <ul class="list-disc list-inside mb-2">
+      <li>Replicates real bale opening mechanism using mechanical and pneumatic systems.</li>
+      <li>Safe, low-voltage operation ideal for academic demonstrations.</li>
+      <li>Modular design for future upgrades (automation, sensors).</li>
+    </ul>
+  </div>
+  
+
+
+  
+  <div class="section-wrapper">
+  <section class="specifications-section">
+    <h1>Bale Opener Specification</h1>
+    <p>
+      <strong>Frame Dimensions:</strong> 3’ × 1’ feet<br>
+      <strong>3 Motors:</strong> BLDC motors<br>
+      &nbsp; • 1 for up-down motion<br>
+      &nbsp; • 1 for horizontal motion (10 rpm)<br>
+      &nbsp; • 1 for plucking cotton or bell (30–40 rpm)<br>
+      <strong>4 Switches:</strong><br>
+      &nbsp; • 1 for up-down motion<br>
+      &nbsp; • 1 for horizontal motion<br>
+      &nbsp; • 1 for plucking roller motion<br>
+      &nbsp; • 1 for blower
+    </p>
+  </section>
+
+
+  <section class="materials-section">
+    <h1>Material Used for Model</h1>
+    <p>
+      a. Iron metal (5mm) for frame and foam (3mm) sheet for outer body<br>
+      b. Sliders for up-down motion<br>
+      c. PVC pipe (0.5”) for roller and spikes for roller<br>
+      d. Nylon rope<br>
+      e. Step-down transformer
+    </p>
+  </section>
+</div>
+  
+
+
+<div class="row">
+  <div class="column">
+    <img src="images/bale 1.jpeg" alt="Bale Opener">
+  </div>
+  <div class="column">
+    <img src="images/bale 3.jpeg" alt="Bale Opener">
+  </div>
+</div>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 0px; /* controls spacing between boxes */
+}
+
+.column {
+
+flex: 0 0 auto;
+width: 35%; /* you can adjust this */
+padding: 10px;
+}
+
+.column img {
+width: 90%;
+height: 30;
+border-radius: 8px;
+object-fit: cover;
+box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+display: block;
+}
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .column {
+    width: 70%;
+    padding: 8px;
+    margin: 0 auto;/* centers the column inside .row */
+  }
+
+  .column img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* optional, ensures image is centered in column */
+  }
+}
+
+
+</style>
+
+
+
+<!-- Video Section -->
+
+<div class="video-wrapper">
+  <section class="video-section">
+    
+    <video src="videos/blowroom.mp4"  controls muted> </video>
+
+    <video src="videos/omkar.mp4"  controls muted> </video>
+
+  </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer Start -->
+<footer class="site-footer">
+    <div class="footer-container">
+      <h3><i class="fas fa-cogs"></i> Miniaturized Blowroom Prototype Model</h3>
+      <p>Shri Guru Gobind Singhji Institute of Engineering and Technology, Vishnupuri, Nanded - 431606</p>
+      <p>Under the guidance of <strong>Dr. Prakash A. Khude</strong></p>
+  
+      <hr>
+  
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fas fa-globe"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+  
+      <div class="footer-team">
+        <p><strong>Team Members:</strong></p>
+        <p>
+          Omkar Bhosale | Tejas Bachhav | Ashwini Shinde | Chaitali Turankar | Kishor Panhalkar<br>
+          Sakshi Suroshe | Dhannasingh Dakhane | Aniket Rahangdale | Gaurav Ghorband
+        </p>
+      </div>
+      
+      <p><em>Website designed and developed by <strong>Ashwini Shinde</strong></em></p>
+      <p class="copyright">
+        &copy; 2025 Mini Blowroom Project | All rights reserved
+      </p>
+    </div>
+  </footer>
+  <!-- Footer End -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </body>
+  </html>

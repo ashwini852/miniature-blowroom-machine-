@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miniaturized Blowroom Prototype</title>
+  <meta name="description" content="Development of a laboratory-scale miniaturized blowroom prototype model for textile applications.">
+  
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f2f4f8;
+    }
+
+    .header {
+      min-height: 90vh;
+      width: 100%;
+      padding-top: 80px;
+      background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/depart.jpeg);
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      padding: 10px 6%;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7); /* semi-transparent black background */
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+
+    label.logo {
+  color: #fbbc05;
+  font-size: 25px;
+  line-height: 50px;
+  padding: 0 15px;
+  font-weight: bold;
+  font-family: 'Miltonian Tattoo', cursive;
+}
+
+
+
+    .nav-links {
+      flex: 1;
+      text-align: right;
+    }
+
+    .nav-links ul li {
+      list-style: none;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+    }
+
+    .nav-links ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      transition: color 0.3s;
+      padding: 8px 16px;
+      border-radius: 25px; 
+    }
+
+    a.active,
+    a:hover {
+      background: #fbbc05;
+      transition: 0.5s;
+      border-radius: 25px; 
+      
+    }
+
+    .text-box {
+      width: 90%;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+    }
+
+    .text-box h1 {
+      font-size: 50px;
+    }
+
+    .fa-bars,
+    .fa-xmark {
+      display: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media(max-width: 700px) {
+      .text-box h1 {
+        font-size: 20px;
+      }
+
+      .nav-links ul li {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+        background: rgba(0, 0, 0, 0.7); /* semi-transparent black background */
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+      }
+
+      .fa-bars,
+      .fa-xmark {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="header">
+    <nav>
+      <label class="logo">Blowroom Machine</label>
+
+      <div class="nav-links" id="nav-links">
+        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about us.html">ABOUT US</a></li>
+          <li class="dropdown">
+            <a href="#">MODEL DETAILS <i class="fa-solid fa-caret-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="model.html">Bale Opener</a></li>
+              <li><a href="metaldetector.html">Metal Detector</a></li>
+              <li><a href="precleaner.html">Precleaner</a></li>
+              <li><a href="multimixer.html">Multimixer</a></li>
+              <li><a href="finecleaner.html">Fine-cleaner</a></li>
+              
+            </ul>
+          </li>
+          <li><a href="references.html">REFERENCES</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          
+        </ul>
+      </div>
+      <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="text-box">
+      <h1>MODEL DETAILS </h1>
+      <p>Metal Detector Machine</p>
+      
+    </div>
+  </section>
+
+  
+  
+
+  <!-- JavaScript for toggling menu -->
+  <script>
+    let navLinks = document.getElementById("nav-links");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
+
+
+
+
+
+<!------------metaldetector ------------>
+
+<div class="section-wrapper">
+    <section class="metal-detector-section">
+      <h1>Metal Detector Machine</h1>
+      <ol>
+        <li>
+          <strong>Detection Process:</strong> The machine has an electromagnetic field generated by sensors. As fibers pass through the machine, any metal object disrupts this field, triggering an alarm or stopping the process.
+        </li>
+        <li>
+          <strong>Separation Process:</strong> Once detected, an automatic reject mechanism (such as an air jet or mechanical separator) removes the contaminated portion. This ensures that only clean fibers proceed further, preventing damage to subsequent machinery like carding machines.
+        </li>
+        <li>
+          <strong>Control System:</strong> The system includes a digital display and sensitivity settings. The operator can adjust sensitivity levels based on material type and required purity.
+        </li>
+      </ol>
+    </section>
+  </div>
+  
+  <div class="bottom-row">
+    <section class="original-metal-detector-specs-section">
+      <h1>Original Metal Detector Machine Specifications</h1>
+      <ul>
+        <li>Width: 800 mm to 1500 mm</li>
+        <li>Height: 1000 mm to 2000 mm</li>
+        <li>Length: 1200 mm to 3000 mm</li>
+        <li>Conveyor Width: 600 mm to 1200 mm</li>
+        <li>Detection Tunnel Size: 600 mm × 800 mm to 1000 mm × 1500 mm (adjustable based on material flow)</li>
+      </ul>
+    </section>
+  
+    <section class="metal-detector-parts-section">
+      <h1>Parts of Metal Detector</h1>
+      <ol>
+        <li>Sensor Coil</li>
+        <li>Electronics Control Unit</li>
+        <li>Signal Processor</li>
+        <li>Alarm System</li>
+        <li>Power Supply</li>
+      </ol>
+    </section>
+  </div>
+  
+  
+  <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0px; /* controls spacing between boxes */
+}
+
+.column {
+  
+  flex: 0 0 auto;
+  width: 35%; /* you can adjust this */
+  padding: 10px;
+}
+
+.column img {
+  width: 90%;
+  height: 30;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
+</style>
+
+
+
+<!-- Video Section -->
+
+<div class="video-wrapper">
+    <section class="video-section">
+      
+      <video src="videos/metal detector.mp4"  controls muted> </video>
+  
+    </section>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer Start -->
+<footer class="site-footer">
+    <div class="footer-container">
+      <h3><i class="fas fa-cogs"></i> Miniaturized Blowroom Prototype Model</h3>
+      <p>Shri Guru Gobind Singhji Institute of Engineering and Technology, Vishnupuri, Nanded - 431606</p>
+      <p>Under the guidance of <strong>Dr. Prakash A. Khude</strong></p>
+  
+      <hr>
+  
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fas fa-globe"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+  
+      <div class="footer-team">
+        <p><strong>Team Members:</strong></p>
+        <p>
+          Omkar Bhosale | Tejas Bachhav | Ashwini Shinde | Chaitali Turankar | Kishor Panhalkar<br>
+          Sakshi Suroshe | Dhannasingh Dakhane | Aniket Rahangdale | Gaurav Ghorband
+        </p>
+      </div>
+      
+      <p><em>Website designed and developed by <strong>Ashwini Shinde</strong></em></p>
+      <p class="copyright">
+        &copy; 2025 Mini Blowroom Project | All rights reserved
+      </p>
+    </div>
+  </footer>
+  <!-- Footer End -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </body>
+  </html>
